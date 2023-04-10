@@ -1,0 +1,19 @@
+{
+    "name": "rish-0593/help-desk",
+    "description": "Laravel Help Desk",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Rish0593\\HelpDesk\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rishabh Kumar",
+            "email": "kumarrishabh050@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
