@@ -14,11 +14,11 @@ class HelpDeskServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadRoutesFrom(__DIR__.'/../routes/helpdesk.php');
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'helpdesk');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'HelpDesk');
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
         $this->mergeConfigFrom(
-            __DIR__.'/../config/helpdesk.php', 'helpdesk'
+            __DIR__.'/../config/helpdesk.php', 'HelpDesk'
         );
 
         $this->publishes([
