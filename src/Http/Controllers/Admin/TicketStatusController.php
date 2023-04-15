@@ -9,7 +9,7 @@ class TicketStatusController extends Controller
 {
     public function index(Request $request)
     {
-        return view('HelpDesk::admin.tickets.status.index');
+        return view('helpdesk::admin.tickets.status.index');
     }
 
     public function list(Request $request)

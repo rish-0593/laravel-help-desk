@@ -9,7 +9,7 @@ class TicketController extends Controller
 {
     public function index(Request $request)
     {
-        return view('HelpDesk::admin.tickets.index');
+        return view('helpdesk::admin.tickets.index');
     }
 
     public function list(Request $request)
