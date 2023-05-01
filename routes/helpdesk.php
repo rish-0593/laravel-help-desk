@@ -8,8 +8,7 @@ use Rish0593\HelpDesk\Http\Controllers\Admin\TicketCategoryController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::prefix('tickets')->name('tickets.categories.')->group(function () {
-        Route::get('categories', [TicketCategoryController::class, 'index'])->name('index');
-        Route::post('categories/list', [TicketCategoryController::class, 'list'])->name('list');
+        Route::match(['get', 'post'], 'categories', [TicketCategoryController::class, 'index'])->name('index');
         Route::post('categories/add-or-update', [TicketCategoryController::class, 'addOrUpdate'])->name('add.or.update');
     });
 
