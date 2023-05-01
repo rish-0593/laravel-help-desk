@@ -2,23 +2,54 @@
 
 namespace Rish0593\HelpDesk\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Rish0593\HelpDesk\Actions\Datatable;
+use Rish0593\HelpDesk\Models\TicketStatus;
+use Rish0593\HelpDesk\Http\Resources\Admin\TicketStatusResource;
 
 class TicketStatusController extends Controller
 {
-    public function index(Request $request)
+    public function getQuery(Request $request)
     {
-        return view('helpdesk::admin.tickets.status.index');
+        return TicketStatus::query();
     }
 
-    public function list(Request $request)
+    public function datatable(Request $request)
     {
-        //
+        $list = (new Datatable($request))->setQuery(function () use ($request) {
+            return $this->getQuery($request);
+        })->setFilterQuery(function($q) use ($request) {
+            return $q;
+        })->process(function($q, $skip, $take){
+            return TicketStatusResource::collection(
+                $q->orderByDesc('id')->skip($skip)->take($take)->get()
+            );
+        });
+
+        return $list;
+    }
+
+    public function index(Request $request)
+    {
+        if($request->ajax()){
+            return $this->datatable($request);
+        }
+
+        return view('helpdesk::admin.tickets.status.index');
     }
 
     public function addOrUpdate(Request $request)
     {
-        //
+        $data = TicketStatus::updateOrCreate(
+            [
+                'id' => $request->id ?? null,
+            ],
+            [
+                'name' => $request->name
+            ]
+        );
+
+        return $data;
     }
 }

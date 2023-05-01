@@ -13,8 +13,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     });
 
     Route::prefix('tickets')->name('tickets.status.')->group(function () {
-        Route::get('status', [TicketStatusController::class, 'index'])->name('index');
-        Route::post('status/list', [TicketStatusController::class, 'list'])->name('list');
+        Route::match(['get', 'post'], 'status', [TicketStatusController::class, 'index'])->name('index');
         Route::post('status/add-or-update', [TicketStatusController::class, 'addOrUpdate'])->name('add.or.update');
     });
 

@@ -15,13 +15,14 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            @includeIf('admin.categories.filters')
+                            @includeIf('helpdesk::admin.tickets.status.filters')
 
                             <div class="table-responsive">
                                 <table id="datatable" class="table table-striped display" style="width:100%">
                                     <thead>
                                         <tr>
                                             <th>{{ __('Name') }}</th>
+                                            <th>{{ __('Status') }}</th>
                                             <th>{{ __('Action') }}</th>
                                         </tr>
                                     </thead>
@@ -35,13 +36,15 @@
     </div>
 
     <x-slot name="modals">
-        @includeIf('admin.categories.modals')
+        @includeIf('helpdesk::admin.tickets.status.modals')
     </x-slot>
 
     <x-slot name="scripts">
         <script>
+            const datatable_url = `{{ route('admin.tickets.status.index') }}`;
         </script>
 
-        @includeIf('admin.categories.scripts')
+        @includeIf('helpdesk::admin.tickets.status.datatable')
+        @includeIf('helpdesk::admin.tickets.status.scripts')
     </x-slot>
 </x-helpdesk::layouts.admin>
