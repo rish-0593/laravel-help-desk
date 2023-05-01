@@ -38,6 +38,10 @@
                             <a href="javascript:void(0);" data-modal-target="#addOrUpdate" data-modal-id="${ d.id }">
                                 <i class="fas fa-edit" style="font-size: 15px;"></i>
                             </a>
+
+                            <a href="javascript:void(0);" data-trash="${ d.id }">
+                                <i class="fas fa-trash" style="font-size: 15px;"></i>
+                            </a>
                         `;
 
                         return html;

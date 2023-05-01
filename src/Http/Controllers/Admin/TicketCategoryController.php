@@ -52,4 +52,11 @@ class TicketCategoryController extends Controller
 
         return $data;
     }
+
+    public function trash(Request $request)
+    {
+        TicketCategory::destroy($request->id);
+
+        return true;
+    }
 }

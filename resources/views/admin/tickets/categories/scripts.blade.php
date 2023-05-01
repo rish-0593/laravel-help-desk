@@ -1,6 +1,7 @@
 <script>
     $(document).ready(function() {
         let datatable = _initDatatable();
+
         $(document).on('click', '[data-modal-target]', function(){
             let target = $(this).data('modal-target');
             let __id = $(this).data('modal-id');
@@ -16,6 +17,7 @@
         });
 
         $("#addOrUpdate").on('hide.bs.modal', function(){
+            $('[name="id"]').val('');
             $('#add-update-module').trigger("reset");
         });
 
@@ -34,6 +36,24 @@
             })
             .done(function(response) {
                 $('#addOrUpdate').modal('hide');
+                datatable.ajax.reload();
+            })
+            .fail(function(error) {
+                console.log( "error" );
+            });
+        });
+
+        $(document).on('click', '[data-trash]', function(){
+            let __id = $(this).attr('data-trash');
+
+            $.ajax({
+                url: trash_url,
+                method: "POST",
+                data: {
+                    id: __id,
+                },
+            })
+            .done(function(response) {
                 datatable.ajax.reload();
             })
             .fail(function(error) {

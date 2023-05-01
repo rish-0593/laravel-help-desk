@@ -42,6 +42,7 @@
     <x-slot name="scripts">
         <script>
             const datatable_url = `{{ route('admin.tickets.categories.index') }}`;
+            const trash_url = `{{ route('admin.tickets.categories.trash') }}`;
         </script>
 
         @includeIf('helpdesk::admin.tickets.categories.datatable')
