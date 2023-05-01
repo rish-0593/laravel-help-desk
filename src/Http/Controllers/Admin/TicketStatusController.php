@@ -52,4 +52,11 @@ class TicketStatusController extends Controller
 
         return $data;
     }
+
+    public function trash(Request $request)
+    {
+        TicketStatus::destroy($request->id);
+
+        return true;
+    }
 }
