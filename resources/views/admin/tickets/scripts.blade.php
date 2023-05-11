@@ -19,5 +19,23 @@
 
             $(target).modal('show');
         });
+
+        $(document).on('click', '[data-trash]', function(){
+            let __id = $(this).attr('data-trash');
+
+            $.ajax({
+                url: trash_url,
+                method: "POST",
+                data: {
+                    id: __id,
+                },
+            })
+            .done(function(response) {
+                datatable.ajax.reload();
+            })
+            .fail(function(error) {
+                console.log( "error" );
+            });
+        });
     });
 </script>

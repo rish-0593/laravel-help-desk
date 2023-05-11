@@ -38,4 +38,11 @@ class TicketController extends Controller
 
         return view('helpdesk::admin.tickets.index');
     }
+
+    public function trash(Request $request)
+    {
+        Ticket::destroy($request->id);
+
+        return true;
+    }
 }
