@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Rish0593\HelpDesk\Actions\Datatable;
 use Rish0593\HelpDesk\Models\TicketCategory;
-use Rish0593\HelpDesk\Http\Resources\Admin\FeedbackResource;
+use Rish0593\HelpDesk\Http\Resources\Admin\TicketCategoryResource;
 
 class TicketCategoryController extends Controller
 {
@@ -22,7 +22,7 @@ class TicketCategoryController extends Controller
         })->setFilterQuery(function($q) use ($request) {
             return $q;
         })->process(function($q, $skip, $take){
-            return FeedbackResource::collection(
+            return TicketCategoryResource::collection(
                 $q->orderByDesc('id')->skip($skip)->take($take)->get()
             );
         });

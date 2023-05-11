@@ -1998,7 +1998,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
+  font-weight: 700 !important;
 }
 p,
 ul:not(.list-unstyled),
@@ -3194,6 +3194,7 @@ table tr:hover .table-links {
 }
 .modal-body {
   padding-top: 15px;
+  border-top: 1px solid #96a2b4;
 }
 .modal-footer {
   padding-top: 15px;

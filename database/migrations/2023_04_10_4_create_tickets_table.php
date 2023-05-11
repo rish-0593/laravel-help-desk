@@ -23,8 +23,8 @@ return new class extends Migration
             $table->foreign('ticket_status_id')->references('id')->on('ticket_status');
             $table->unsignedBigInteger('ticket_user_id');
             $table->foreign('ticket_user_id')->references('id')->on('ticket_users');
-            $table->softDeletes();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::enableForeignKeyConstraints();

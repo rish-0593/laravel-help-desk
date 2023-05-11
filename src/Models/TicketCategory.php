@@ -16,4 +16,9 @@ class TicketCategory extends Model
         'name',
         'status'
     ];
+
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class);
+    }
 }

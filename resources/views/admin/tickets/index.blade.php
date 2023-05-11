@@ -8,14 +8,9 @@
                     <div class="card">
                         <div class="card-header">
                             <h4>{{ __('Tickets') }}</h4>
-                            <div class="card-header-form">
-                                <div class="input-group-btn">
-                                    <button type="button" class="btn btn-primary" data-modal-target="#addOrUpdate">Add</button>
-                                </div>
-                            </div>
                         </div>
                         <div class="card-body">
-                            @includeIf('admin.categories.filters')
+                            @includeIf('helpdesk::admin.tickets.filters')
 
                             <div class="table-responsive">
                                 <table id="datatable" class="table table-striped display" style="width:100%">
@@ -38,13 +33,15 @@
     </div>
 
     <x-slot name="modals">
-        @includeIf('admin.categories.modals')
+        @includeIf('helpdesk::admin.tickets.modals')
     </x-slot>
 
     <x-slot name="scripts">
         <script>
+            const datatable_url = `{{ route('admin.tickets.index') }}`;
         </script>
 
-        @includeIf('admin.categories.scripts')
+        @includeIf('helpdesk::admin.tickets.datatable')
+        @includeIf('helpdesk::admin.tickets.scripts')
     </x-slot>
 </x-helpdesk::layouts.admin>

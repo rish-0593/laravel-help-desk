@@ -4,7 +4,7 @@ namespace Rish0593\HelpDesk\Http\Resources\Admin;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class FeedbackResource extends JsonResource
+class TicketCategoryResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
