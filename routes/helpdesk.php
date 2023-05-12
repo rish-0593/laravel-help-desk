@@ -23,5 +23,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::prefix('tickets')->name('tickets.')->group(function () {
         Route::match(['get', 'post'], '/', [Admin\TicketController::class, 'index'])->name('index');
         Route::post('trash', [Admin\TicketController::class, 'trash'])->name('trash');
+        Route::post('update-status', [Admin\TicketController::class, 'updateStatus'])->name('update.status');
     });
 });

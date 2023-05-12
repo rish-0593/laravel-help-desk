@@ -31,3 +31,27 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="statusModal" tabindex="-1" role="dialog" aria-labelledby="formModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" data-title></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 col-12 b-r">
+                        <select class="form-control" name="status" id="status">
+                            <option value="" >Select an option</option>
+                        </select>
+                    </div>
+                </div>
+
+                <p class="m-t-20" data-description></p>
+            </div>
+        </div>
+    </div>
+</div>

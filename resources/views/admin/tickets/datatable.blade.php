@@ -34,7 +34,15 @@
                 {
                     name: 'ticket_status',
                     data: function ( d ) {
-                        return `<span class="__ticket_status badge badge-primary">${d.ticket_status}</span>`;
+                        let html = `
+                            <span class="__ticket_status badge badge-primary">${d.ticket_status?.name}</span>
+
+                            <a href="javascript:void(0);" data-modal-target="#statusModal" data-modal-data="${ btoa(JSON.stringify(statuses)) }" data-modal-selected="${d.ticket_status?.id}" data-modal-id="${d.id}">
+                                <i class="fas fa-edit" style="font-size: 15px;"></i>
+                            </a>
+                        `;
+
+                        return html;
                     },
                     orderable: false
                 },
