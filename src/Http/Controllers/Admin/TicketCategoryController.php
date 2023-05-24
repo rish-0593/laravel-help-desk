@@ -4,6 +4,7 @@ namespace Rish0593\HelpDesk\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Rish0593\HelpDesk\Actions\Datatable;
 use Rish0593\HelpDesk\Models\TicketCategory;
 use Rish0593\HelpDesk\Http\Resources\Admin\TicketCategoryResource;
@@ -56,6 +57,15 @@ class TicketCategoryController extends Controller
     public function trash(Request $request)
     {
         TicketCategory::destroy($request->id);
+
+        return true;
+    }
+
+    public function updateStatus(Request $request)
+    {
+        TicketCategory::find($request->id)->update([
+            'status' => DB::raw('NOT status')
+        ]);
 
         return true;
     }

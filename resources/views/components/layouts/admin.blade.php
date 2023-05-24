@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('vendor/helpdesk/css/components.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/helpdesk/datatables/datatables.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/helpdesk/izitoast/iziToast.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/helpdesk/pretty-checkbox/pretty-checkbox.min.css') }}">
 
     <link rel='shortcut icon' type='image/x-icon' href='{{ asset('favicon.ico') }}' />
     <script src="{{ asset('vendor/helpdesk/js/app.js') }}"></script>

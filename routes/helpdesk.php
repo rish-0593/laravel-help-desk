@@ -12,6 +12,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::match(['get', 'post'], 'categories', [Admin\TicketCategoryController::class, 'index'])->name('index');
         Route::post('categories/add-or-update', [Admin\TicketCategoryController::class, 'addOrUpdate'])->name('add.or.update');
         Route::post('categories/trash', [Admin\TicketCategoryController::class, 'trash'])->name('trash');
+        Route::post('categories/update-status', [Admin\TicketCategoryController::class, 'updateStatus'])->name('update.status');
     });
 
     Route::prefix('tickets')->name('tickets.status.')->group(function () {
