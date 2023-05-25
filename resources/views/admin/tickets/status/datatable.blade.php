@@ -27,7 +27,16 @@
                 {
                     name: 'status',
                     data: function ( d ) {
-                        return `<span class="__status">${d.status}</span>`;
+                        return `
+                            <span class="__status">
+                                <div class="pretty p-switch p-fill">
+                                    <input type="checkbox" ${d.status ? 'checked' : ''} data-status data-modal-id="${ d.id }">
+                                    <div class="state p-success">
+                                        <label></label>
+                                    </div>
+                                </div>
+                            </span>
+                        `;
                     },
                     orderable: false
                 },

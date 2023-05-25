@@ -43,6 +43,7 @@
         <script>
             const datatable_url = `{{ route('admin.tickets.status.index') }}`;
             const trash_url = `{{ route('admin.tickets.status.trash') }}`;
+            const update_status_url = `{{ route('admin.tickets.status.update.status') }}`;
         </script>
 
         @includeIf('helpdesk::admin.tickets.status.datatable')
